@@ -40,13 +40,6 @@ class Solution:
                 ans += roman[s[i]]
         return ans + roman[s[-1]]
 
-
-# if __name__ == '__main__':
-    # s = 'LVIII'
-    # s = 'MCMXCIV'
-    # ans = Solution().romanToInt(s)
-    # print(ans)
-        
 # @lc code=end
 class P23TestCase(unittest.TestCase):
     def testRomanToInteger(self):
