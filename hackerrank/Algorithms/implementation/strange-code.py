@@ -1,3 +1,12 @@
+#!/bin/python3
+# https://www.hackerrank.com/challenges/strange-code/problem
+
+import math
+import os
+import random
+import re
+import sys
+
 # Complete the strangeCounter function below.
 def strangeCounter(t):
     c, i = 0, 0
@@ -6,10 +15,14 @@ def strangeCounter(t):
         i += 1
     return c - t + 1
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-def strangeCounter2(t):
-    rem = 3
-    while t > rem:
-        t = t-rem
-        rem *= 2
-    return rem-t+1
+    t = int(input())
+
+    result = strangeCounter(t)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
