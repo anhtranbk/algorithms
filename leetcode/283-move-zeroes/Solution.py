@@ -5,19 +5,21 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        i = len(nums) - 1
-        while i >= 0:
-            if nums[i] == 0:
-                self.move_zero(nums, i)
-            i -= 1
-            
-        
-    def move_zero(self, nums, i):
-        while i+1 < len(nums) and nums[i+1] != 0:
-            self.swap(nums, i, i+1)
-            i += 1
-        
+        i, j = 0, 1
+        while j < len(nums):
+            if nums[j] == 0:
+                j += 1
+            elif j <= i:
+                j = i + 1
+            elif nums[i] != 0:
+                i += 1
+            else:
+                self.swap(nums, i, j)
+                i += 1
+                j += 1
+    
+
     def swap(self, nums, i, j):
-        tmp = nums[i]
+        t = nums[i]
         nums[i] = nums[j]
-        nums[j] = tmp
+        nums[j] = t
