@@ -1,5 +1,13 @@
+#
+# @lc app=leetcode id=17 lang=python3
+#
+# [17] Letter Combinations of a Phone Number
+#
+from typing import List
+
+# @lc code=start
 class Solution:
-    def letterCombinations(self, digits: str):
+    def letterCombinations(self, digits: str) -> List[str]:
         mappings = {
             '2': 'abc',
             '3': 'def',
@@ -22,7 +30,7 @@ class Solution:
                         new_strs.append(s + c)
             strs = new_strs
         return strs
-
-
+        
+# @lc code=end
 if __name__ == '__main__':
     print(Solution().letterCombinations('235'))
