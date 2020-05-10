@@ -67,7 +67,7 @@ class P23TestCase(unittest.TestCase):
         ans = Solution().mergeKLists(lists=[l1, l2, l3, l4])
         
         actual = self.nodeToArray(node=ans)
-        expected = [1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 7, 8, 9, 9, 10]
+        expected = [1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6,7, 7, 7, 8, 9, 9, 10]
         self.assertEquals(actual, expected)
         
     @staticmethod
