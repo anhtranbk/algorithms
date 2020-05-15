@@ -1,4 +1,5 @@
-class Solution {
+public class CountPrimes {
+
     public int countPrimes(int n) {
         int count = 0;
         boolean[] primes = new boolean[n];
@@ -21,13 +22,17 @@ class Solution {
 
     private boolean isPrime(int num) {
         if (num <= 1) return false;
-        // Loop's ending condition is i * i <= num 
-        // instead of i <= sqrt(num)
-        // to avoid repeatedly calling an expensive 
-        // function sqrt().
+        // Loop's ending condition is i * i <= num instead of i <= sqrt(num)
+        // to avoid repeatedly calling an expensive function sqrt().
         for (int i = 2; i * i <= num; i++) {
-           if (num % i == 0) return false;
+            if (num % i == 0) return false;
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        CountPrimes cp = new CountPrimes();
+        int ret = cp.countPrimes(10);
+        System.out.println(ret);
     }
 }

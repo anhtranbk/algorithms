@@ -1,5 +1,7 @@
-
-class Solution {
+/**
+ * @author <a href="https://github.com/tjeubaoit">tjeubaoit</a>
+ */
+public class DivideTwoInteger {
 
     public int divide(int dividend, int divisor) {
         if (dividend == Integer.MIN_VALUE && divisor == -1) return Integer.MAX_VALUE;
@@ -49,8 +51,8 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        int dividend = Integer.parseInt(args[0]);
-        int divisor = Integer.parseInt(args[1]);
-        System.out.println(new Solution().divide(dividend, divisor));
+//        int dividend = Integer.parseInt(args[0]);
+//        int divisor = Integer.parseInt(args[1]);
+        System.out.println(new DivideTwoInteger().divide(10, -3));
     }
 }

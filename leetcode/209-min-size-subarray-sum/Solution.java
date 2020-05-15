@@ -1,4 +1,7 @@
-class Solution {
+/**
+ * @author <a href="https://github.com/tjeubaoit">tjeubaoit</a>
+ */
+public class MinimumSubArraySum {
 
     public int minSubArrayLen(int s, int[] nums) {
         return solution2(s, nums);
@@ -49,5 +52,13 @@ class Solution {
             j += 1;
         }
         return ret < Integer.MAX_VALUE ? ret : 0;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{2, 3, 1, 2, 4, 3};
+        int[] nums2 = new int[]{1, 2, 3, 4, 5};
+
+//        System.out.println(new MinimumSubArraySum().solution1(7, nums));
+        System.out.println(new MinimumSubArraySum().solution2(15, nums2));
     }
 }
