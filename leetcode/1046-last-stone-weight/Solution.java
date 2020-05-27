@@ -1,4 +1,8 @@
-class Solution {
+/**
+ * @author <a href="https://github.com/tjeubaoit">tjeubaoit</a>
+ */
+public class LastStoneWeight {
+
     public int lastStoneWeight(int[] stones) {
         int[] counts = new int[1001];
         for (int stone : stones) {
@@ -22,5 +26,10 @@ class Solution {
             i--;
         }
         return counts[1];
+    }
+
+    public static void main(String[] args) {
+        LastStoneWeight sol = new LastStoneWeight();
+        System.out.println(sol.lastStoneWeight(new int[]{1,3}));
     }
 }
