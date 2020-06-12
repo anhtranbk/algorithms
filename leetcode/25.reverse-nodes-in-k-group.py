@@ -6,7 +6,6 @@
 from dis import pretty_flags
 from typing import List, Optional
 
-# @lc code=start
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -21,14 +20,16 @@ class ListNode:
         print()
 
 
+# @lc code=start
 class Solution:
     # Solution 1: for 1 -> k, for each group reverse same as reverse all list
     # Solution 2 (better): count number elements of list, for each group reverse inline
     # Solution 3 (more better): count number elements of list, reverse inline for all elements
 
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        return self.reverseKGroup_better(head=head, k=k)
+        return self.reverseKGroup(head=head, k=k)
 
+    # TODO: Make better solution works
     def reverseKGroup_better(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         dummy = ListNode(next=head)
         cnt, node = 0, head
@@ -50,8 +51,10 @@ class Solution:
             prev_tail.next = prev
             prev_tail = t
 
+        return dummy.next
 
-    def reverseKGroup_1(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+
+    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         head = ListNode(next=head)
         prev_group = head
         node = head.next
