@@ -24,3 +24,25 @@ class BaseTestCase(unittest.TestCase):
                     print('Expected', expected)
                     print('Actual', actual)
                 raise
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+    def vals_as_array(self) -> List[int]:
+        arr = []
+        node = self
+        while node:
+            arr.append(node.val)
+            node = node.next
+        return arr
+
+    def __str__(self) -> str:
+        node = self
+        s = ''
+        while node:
+            s += str(node.val) + ('->' if node.next else '')
+            node = node.next
+        return s
