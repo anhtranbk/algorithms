@@ -14,4 +14,10 @@ class Solution {
         }
         return 0;
     }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{1, 6, 3, 2, 5, 4};
+        int ans = new Solution().findKthLargest(nums, 3);
+        System.out.println(ans);
+    }
 }
