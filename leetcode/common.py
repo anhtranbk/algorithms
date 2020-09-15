@@ -7,7 +7,7 @@ class BaseTestCase(unittest.TestCase):
         expected: List[Any], 
         actual: List[Any], 
         sorted_before_comparing=False, 
-        exec_info=True
+        print_exec_info=True
     ):
         self.assertEqual(len(expected), len(actual))
 
@@ -19,10 +19,10 @@ class BaseTestCase(unittest.TestCase):
             try:
                 self.assertEqual(expected[i], actual[i])
             except Exception:
-                if exc_info:
+                if print_exec_info:
                     print('Exception when asserting at element ' + str(i))
                     print('Expected', expected)
-                    print('Actual', actual)
+                    print('Actual  ', actual)
                 raise
 
 # Definition for singly-linked list.
