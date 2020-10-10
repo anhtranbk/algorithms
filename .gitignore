@@ -22,3 +22,5 @@ build*/
 
 .DS_Store
 .vscode/
+
+cmake-build-debug/
