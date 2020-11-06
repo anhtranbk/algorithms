@@ -35,18 +35,17 @@ impl MyListNode {
     }
 }
 
-/** 
+/**
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
 impl MinStack {
-
     fn new() -> Self {
         Self {
             tail: Some(Box::new(MyListNode::new_empty(0, i32::MAX as i32))),
         }
     }
-    
+
     fn push(&mut self, val: i32) {
         let curr = self.tail.take().unwrap();
         let min = cmp::min(curr.min, val);
@@ -54,16 +53,16 @@ impl MinStack {
 
         self.tail = Some(Box::new(new));
     }
-    
+
     fn pop(&mut self) {
         let curr = self.tail.take().unwrap();
         self.tail = curr.prev;
     }
-    
+
     fn top(&self) -> i32 {
         self.tail.as_ref().unwrap().val
     }
-    
+
     fn get_min(&self) -> i32 {
         self.tail.as_ref().unwrap().min
     }

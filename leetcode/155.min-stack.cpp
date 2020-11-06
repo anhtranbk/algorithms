@@ -16,11 +16,8 @@ struct MyListNode
 
     MyListNode(int min, int val) : MyListNode(min, val, nullptr) {}
 
-    MyListNode(int min, int val, MyListNode *prev)
+    MyListNode(int min, int val, MyListNode *prev): min(min), val(val), prev(prev) {}
     {
-        this->min = min;
-        this->val = val;
-        this->prev = prev;
     }
 };
 
