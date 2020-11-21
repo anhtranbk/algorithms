@@ -1,11 +1,10 @@
+package leetcode
 
 /*
  * @lc app=leetcode id=380 lang=golang
  *
  * [380] Insert Delete GetRandom O(1)
  */
-package leetcode
-
 import (
 	"fmt"
 	"math/rand"
@@ -17,7 +16,7 @@ type RandomizedSet struct {
 	vals []int
 }
 
-func Constructor() RandomizedSet {
+func Constructor380() RandomizedSet {
 	return RandomizedSet{
 		pos:  make(map[int]int, 0),
 		vals: make([]int, 0),
@@ -40,7 +39,8 @@ func (this *RandomizedSet) Remove(val int) bool {
 	}
 
 	l := len(this.vals) - 1
-	if i < l { // swap
+	if i < l {
+		// swap removed element with the last element
 		this.vals[i], this.vals[l] = this.vals[l], this.vals[i]
 		this.pos[this.vals[i]] = i
 	}
@@ -63,8 +63,9 @@ func (this *RandomizedSet) GetRandom() int {
  * param_3 := obj.GetRandom();
  */
 // @lc code=end
+
 func Test380() {
-	set := Constructor()
+	set := Constructor380()
 	set.Insert(0)
 	fmt.Println(set.vals, set.pos)
 	set.Insert(1)
