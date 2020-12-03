@@ -5,28 +5,20 @@
  */
 
 // @lc code=start
-struct Codec {
-	
-}
+struct Codec {}
 
-/** 
+/**
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
 impl Codec {
-    fn new() -> Self {
-        
-    }
-	
+    fn new() -> Self {}
+
     // Encodes a URL to a shortened URL.
-    fn encode(&self, longURL: String) -> String {
-        
-    }
-	
+    fn encode(&self, longURL: String) -> String {}
+
     // Decodes a shortened URL to its original URL.
-    fn decode(&self, shortURL: String) -> String {
-        
-    }
+    fn decode(&self, shortURL: String) -> String {}
 }
 
 /**
@@ -36,4 +28,3 @@ impl Codec {
  * let ans: VecVec<String> = obj.decode(s);
  */
 // @lc code=end
-
